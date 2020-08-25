@@ -1,0 +1,64 @@
+#列表
+#列表可以存放任何数据类型
+# list1=[10,20,[30,40,50]]
+#对于列表中的字列表中的某个值，可以使用两个下标来表示
+# print(list1[2][0])
+list1=[50,10,20,30,40,50]
+# print(list1)
+#列表属于可变对象，可以通过下标来修改某个位置的值
+list1[2]=999
+print(list1)
+#向列表中加入元素
+#第一种，append方法
+# list1.append(1) #在列表的末尾加入一个值
+# print(list1)
+#第二种，insert方法
+# list1.insert(99999,100) #在指定位置加入一个值，如果下标大于列表的最大下标，则加到最后一位
+# print(list1)
+#第三种，extend方法，注意此方法其实是列表的拼接,如果是字符串，它会将其转成列表
+# list1.extend(345) #输入数字会报错，只能输入列表或者字符串或者列表
+# list1.extend('abc')
+# print(list1)
+#删除列表中的某个值
+#第一种，pop方法，pop方法可以用一个变量来接受被删除的值
+# list1.pop() #pop方法默认删除列表中的最后一个值
+# 如果填下标，那么就删除下标位置的值
+# a=list1.pop(1)
+# print(list1,'被删除的值是：',a)
+#第二种，remove方法
+# list1.remove(50) #根据值来删除,这种删除方式，效率相对比较低
+# print(list1)
+#如果要删除的值不在列表中，则会报错 "x not in list"
+# list1.remove('ABC')
+# print(list1)
+#remove每次只删除它遇到的第一个符合条件的值
+# 第三种 del的方式
+# del list1[4]
+# print(list1)
+#用切片可以删除列表中的多个值
+# del list1[0:3]
+# print(list1)
+
+#列表中的切片
+#[起始位置:终止位置:步长]
+# list2=list1[::2]
+# print(list2)
+#将列表翻转
+# list2=list1[::-1]
+
+#元组
+#元组属于不可变对象，它和列表的其他用法是一样的，但是它不可以增加/修改/删除其中的值
+# tuple1=(10,20)
+# tuple1=(10000,20)
+# print(tuple1)
+#如果元组中只有一个值,会被Python看作字符串或者数字，可以在后面加一个逗号
+# tuple2=(10,)
+# print(type(tuple2))
+#type()函数可以返回某个值的数据类型
+#list()函数和tuple()函数，可以临时改变数据类型,list函数返回列表类型，tuple函数返回元组类型
+# print(list(tuple1))
+# print(tuple(list1))
+#如果元组中有子列表，那么元组中的子列表是可以修改的
+tuple3=(10,20,[30,40,50])
+tuple3[2][0]=999
+print(tuple3)

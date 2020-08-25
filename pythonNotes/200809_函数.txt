@@ -1,0 +1,77 @@
+#函数
+#函数的概念,封装
+#函数需要调用才会执行，不调用不执行，函数起名时，尽量规范，最好做到见名知意
+# a=20
+# b=15
+# print(a+b)
+#没有返回值的函数，a,b是形式参数，简称形惨
+# def sumdata(a,b):
+#     print(a+b)
+#调用函数，33,69是实际参数，简称实参
+# sumdata(33,69)
+#函数可以没有返回值，但是标准的函数应该具有返回值
+#函数return之后的语句称之为不可达语句，永远也不会执行
+# def sumdata2(a,b):
+#     return a+b
+#     print('12345')
+# print(sumdata2(33,69))
+#函数之中可以有多个return吗？
+#写一个函数，返回值一个数字的绝对值
+# def fun1(a):
+#     if a>=0:
+#         return a
+#     else:
+#         return -a
+# print(fun1(0))
+#return可以有多个值，当有多个返回值时，它们是以元组的身份返回
+# def fun2(a):
+#     return a*a,a+a,a**a
+# print(fun2(3))
+
+#位置参数 *args 它代表0到若干个参数，没有长度限制
+# def fun3(*args,a,b):
+#     print(*args,a,b)
+# fun3(22,33,11,111,222,555,123,13123,a=1,b=2)
+#当实参因为*args或其他原因无法被获取到时，可以使用a=,b=的形式来让函数获取到实参
+# def sumdata(a,b):
+#     print(a+b)
+# sumdata(2,3)
+# sumdata(2,b=3)
+# sumdata(a=2,b=3)
+# sumdata(a=2,3) #这种写法会报语法错误
+
+# def fun3(*args,a,b):
+#     return(*args,a,b) #会自行进行拆包
+#     # return(args,a,b)  #不会拆包，每个参数都会打包在元组里
+# print(fun3(22,33,11,111,222,555,123,13123,a=1,b=2))
+
+#关键字参数，它会存放为一个字典
+# def fun5(a,**kwargs):
+#     print(a,kwargs)
+# fun5(10,name='liudehua')
+#关键字参数必须写在位置参数的后方,*args在前,**kwargs在后
+
+#除了自定义的函数之外，Python本身也提供了很多自带的函数，称之为BIF（内置参数）
+# print() 打印函数
+# input() 读取用户输入
+# int() 转换为整数型
+# id()  获取对象在内存中的位置编号
+# type() 获取对象的类型
+# len() 获取对象的长度
+
+#函数的默认值，当传递实参时，如果少传了某个具有默认值的形参对应的实参，则直接使用默认值
+#如果穿了对应值，则使用用户传的值，不使用默认值
+# def fun20(a=30,b=20):
+#     return a+b
+# print(fun20(a=11,b=66))
+
+#print()函数中，sep=' '表示间隔参数，每个参数之间默认间隔一个空格
+# print(10,20,sep='')
+# end='\n'表示结束参数，每次调用print函数结束之后，自动补一个换行符
+# print(10,end='')
+# print(20)
+#场景，简单的倒计时，涉及的知识点后面讲到循环时会再讲，今天可以先简单了解一下
+# import time
+# for i in range(10,-1,-1):
+#     print('\r','倒计时'+str(i)+'秒',end='',flush=True)
+#     time.sleep(1)
